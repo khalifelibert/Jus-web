@@ -1,0 +1,39 @@
+﻿@page
+@model WebApp0.Pages.Commands.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Command</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Command.ProduitQlId" class="control-label"></label>
+                <input asp-for="Command.ProduitQlId" class="form-control" />
+                <span asp-validation-for="Command.ProduitQlId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Command.Quantity" class="control-label"></label>
+                <input asp-for="Command.Quantity" class="form-control" />
+                <span asp-validation-for="Command.Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
